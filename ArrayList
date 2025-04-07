@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+public class exemplojava {
+    public static void main(String[] args) {
+        // Criando a lista de alunos
+        ArrayList<String> alunos = new ArrayList<>();
+
+        // Adicionando pelo menos 5 nomes
+        alunos.add("Issac");
+        alunos.add("Bruno");
+        alunos.add("Dalmy");
+        alunos.add("Luis");
+        alunos.add("Manuel gomes");
+
+        // Exibindo a lista completa
+        System.out.println("Lista de alunos: " + alunos);
+
+        // Removendo um nome específico
+        String nomeRemover = "Dalmy";
+        if (alunos.remove(nomeRemover)) {
+            System.out.println(nomeRemover + " foi removido da lista.");
+        } else {
+            System.out.println(nomeRemover + " não encontrado na lista.");
+        }
+
+        // Exibindo a lista após a remoção
+        System.out.println("Lista atualizada: " + alunos);
+
+        // Informando quantos alunos restaram na lista
+        System.out.println("numeros de alunos restantes" + alunos.size());
+
+
+
+    }
+}
