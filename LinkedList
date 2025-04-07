@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class BancoAtendimento {
+    public static void main(String[] args) {
+        Queue<Integer> filaClientes = new LinkedList<>(); // Fila para clientes aguardando atendimento
+        List<Integer> historicoAtendidos = new ArrayList<>(); // Lista para armazenar clientes atendidos
+        Scanner scanner = new Scanner(System.in);
+        int contadorCliente = 1; // Número inicial para os clientes
+
+        while (true) {
+            System.out.println("\nMENU:");
+            System.out.println("1 - Adicionar cliente à fila");
+            System.out.println("2 - Atender cliente");
+            System.out.println("3 - Mostrar fila");
+            System.out.println("4 - Mostrar histórico de atendimentos");
+            System.out.println("5 - Sair");
+            System.out.print("Escolha uma opção: ");
+
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    filaClientes.add(contadorCliente);
+                    System.out.println("Cliente " + contadorCliente + " entrou na fila.");
+                    contadorCliente++;
+                    break;
+
+                case 2:
+                    if (!filaClientes.isEmpty()) {
+                        int clienteAtendido = filaClientes.poll(); // Remove o primeiro da fila
+                        historicoAtendidos.add(clienteAtendido);
+                        System.out.println("Cliente " + clienteAtendido + " foi atendido.");
+                    } else {
+                        System.out.println("Não há clientes na fila.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Fila de clientes: " + filaClientes);
+                    break;
+
+                case 4:
+                    System.out.println("Histórico de atendimentos: " + historicoAtendidos);
+                    break;
+
+                case 5:
+                    System.out.println("Encerrando o sistema...");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+    }
+}
+message.txt
+3 KB
